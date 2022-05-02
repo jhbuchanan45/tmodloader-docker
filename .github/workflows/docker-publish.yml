@@ -35,10 +35,10 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           platforms: linux/amd64,linux/arm64
-          build-args:
+          build-args: |
             TMOD_VERSION=${{ github.event.inputs.tModLoaderVersion }}
             TERRARIA_VERSION=${{ github.event.inputs.terrariaVersion }}
           push: true
-          tags: 
-            jhbuchanan21/tmodloader:latest-github,
+          tags: |
+            jhbuchanan21/tmodloader:latest-github
             jhbuchanan21/tmodloader:v${{ github.event.inputs.tModLoaderVersion }}-github
