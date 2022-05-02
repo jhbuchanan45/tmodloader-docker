@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 pipe=/tmp/tmod.out
 players=/tmp/tmod.players.out
