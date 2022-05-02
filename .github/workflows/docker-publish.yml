@@ -40,5 +40,5 @@ jobs:
             TERRARIA_VERSION=${{ github.event.inputs.terrariaVersion }}
           push: true
           tags: 
-            jhbuchanan21/tmodloader:latest-github
+            jhbuchanan21/tmodloader:latest-github,
             jhbuchanan21/tmodloader:v${{ github.event.inputs.tModLoaderVersion }}-github
