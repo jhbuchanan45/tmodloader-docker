@@ -39,7 +39,7 @@ ENV TMOD_IDLE_CHECK_INTERVAL=""
 ENV TMOD_IDLE_CHECK_OFFSET=0
 
 RUN apt-get update &&\
-    apt-get install -y tmux &&\
+    apt-get install -y tmux cron pcregrep &&\
     apt-get clean
 
 WORKDIR /terraria-server
