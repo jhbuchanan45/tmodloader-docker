@@ -6,8 +6,6 @@ ARG TERRARIA_VERSION=1412
 RUN apk update &&\
     apk add --no-cache --virtual build curl unzip
 
-# RUN cp /usr/lib/libMonoPosixHelper.so .
-
 RUN mkdir /terraria-server
 
 ADD "https://terraria.org/api/download/pc-dedicated-server/terraria-server-${TERRARIA_VERSION}.zip" /
@@ -52,6 +50,6 @@ COPY handle-idle.sh /usr/local/bin/handle-idle
 COPY config.txt entrypoint.sh ./
 RUN chmod +x entrypoint.sh /usr/local/bin/inject /usr/local/bin/handle-idle
 
-VOLUME ["/root/.local/share/Terraria/Worlds", "/root/.local/share/Terraria/ModLoader/Mods", "/config", "/terraria-server/logs"]
+VOLUME ["/terraria", "/terraria-server/config.txt"]
 
 ENTRYPOINT [ "/terraria-server/entrypoint.sh" ]
